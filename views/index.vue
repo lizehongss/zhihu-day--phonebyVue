@@ -3,15 +3,24 @@
 		<div class="title"></div>
 		<div class="lb"></div>
 		<div class="daily">
+			<div v-for="list in recommendList">
+				<div class="daily-date">{{formatDay(list.date)
+				}}</div>
+				<Item
+					v-for="item in list.stories"
+					:data="item"
+					:key="item.id">
+					>
+				</Item>
+			</div>
 		</div>
 	</div>
 </template>
 <script>
-import Item from './component/item.vue';
-	import $ from './libs/util';
-	import dailyArticle from './component/daily-article.vue';
+import Item from '../component/item.vue';
+	import $ from '../libs/util';
 	export default{
-		components:{Item,dailyArticle},
+		components:{Item},
 		data (){
 			return {
 				themeId: 0,
@@ -50,17 +59,7 @@ import Item from './component/item.vue';
 		},
 		mounted (){
 			this.getRecommendList();
-			//监听滚动事件
-			const $list=this.$refs.list;//获取DOM
-			$list.addEventListener('scroll',()=>{
-				if(this.isLoading) return;//为主题日报或正在加载时 return
-				if(
-					$list.scrollTop+document.body.clientHeight>=$list.scrollHeight){
-					this.dailyTime-=86400000;
-				this.getRecommendList();
-				}
-			})
-
+			
 		}
 	}
 </script>

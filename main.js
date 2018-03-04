@@ -34,13 +34,6 @@ const RouterConfig={
 	routes: Routers
 };
 const router =new VueRouter(RouterConfig);
-router.beforeEach((to,from,next)=>{
-	window.document.title=to.meta.title;
-	next();
-});
-router.afterEach((to,from,next)=>{
-	window.scrollTO(0,0);
-});
 
 new Vue({
 	el: '#app',
