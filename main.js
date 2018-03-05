@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './app.vue';
+import './style.css'
+import './iconfont.js'
 Vue.use(VueRouter);
 
 const Routers =[

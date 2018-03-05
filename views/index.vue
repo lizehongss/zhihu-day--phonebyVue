@@ -1,6 +1,21 @@
 <template>
 	<div class="content">
-		<div class="title"></div>
+		<div class="title">
+			<div class="left">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-category"></use>
+			</svg>
+			<span>首页</span>
+			</div>
+			<div class="right">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-remind"></use>
+			</svg>
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-gengduo"></use>
+			</svg>
+			</div>
+		</div>
 		<div class="lb"></div>
 		<div class="daily">
 			<div v-for="list in recommendList">
@@ -41,7 +56,6 @@ import Item from '../component/item.vue';
 				this.isLoading=true;
 				const prevDay=$.prevDay(this.dailyTime+86400000);
 				$.ajax.get('news/before/'+prevDay).then(res=>{
-					console.log("ok");
 				this.recommendList.push(res);
 				//更新后为false	
 				this.isLoading=false;
@@ -64,3 +78,18 @@ import Item from '../component/item.vue';
 		}
 	}
 </script>
+<style scoped>
+	.title{
+		background-color: #4348b7;
+		height: 40px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: #fff;
+	}
+	.icon{
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+</style>

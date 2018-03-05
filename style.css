@@ -1,4 +1,7 @@
-#app{
-	font-size: 24px;
-	color: #f50;
+/*icon通用代码*/
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
 }
