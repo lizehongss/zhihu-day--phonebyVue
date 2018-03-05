@@ -41,6 +41,7 @@ import Item from '../component/item.vue';
 				this.isLoading=true;
 				const prevDay=$.prevDay(this.dailyTime+86400000);
 				$.ajax.get('news/before/'+prevDay).then(res=>{
+					console.log("ok");
 				this.recommendList.push(res);
 				//更新后为false	
 				this.isLoading=false;

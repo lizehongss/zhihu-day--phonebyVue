@@ -1,7 +1,7 @@
 import axios from 'axios';
 const Util={
-	imgPath: 'https://news-at.zhihu.com/api/7/prefetch-launch-images/1080*1920',
-	apiPath: 'https://news-at.zhihu.com/api/4'
+	imgPath: 'http://127.0.0.1:8011/img/',
+	apiPath: 'http://127.0.0.1:8010'
 };
 Util.ajax =axios.create({
 	baseURL: Util.apiPath
