@@ -18,16 +18,23 @@
 			</div>
 		</div>
 		<div class="lb"></div>
-		<div class="daily">
+		<div class="daily"  ref="list">
 			<div v-for="list in recommendList">
-				<div class="daily-date">{{formatDay(list.date)
-				}}</div>
+			<div class="daily-date">{{formatDay(list.date)}}</div>
+			<scroll ref="wrrapper"
+			class="wrapper"
+			:data="list.stories"
+			:pullup="pullup"
+			:pulldown="pulldown"
+			@pulldown="getRecommendList"
+			@scrollToEnd="moreData">
 				<Item
 					v-for="item in list.stories"
 					:data="item"
 					:key="item.id">
 					>
 				</Item>
+			</scroll>
 			</div>
 		</div>
 	</div>
@@ -72,10 +79,12 @@
 <script>
 	import Item from '../component/item.vue';
 	import $ from '../libs/util';
-	import Clickoutside from '../directives/clickoutside'
+	import Clickoutside from '../directives/clickoutside';
+	import scroll from '../component/scroll.vue';
+	import BScoll from 'better-scroll';
 	export default{
 		directives:{Clickoutside},
-		components:{Item},
+		components:{Item,scroll},
 		data (){
 			return {
 				dailyTime: $.getTodayTime(), //获得时间
@@ -84,8 +93,9 @@
 				articleId: 0,
 				showsilbar: false,  //控制侧栏开关
 				themes: [], //主题数据
-				themeId: 0 //当前点击的主题
-
+				themeId: 0 ,//当前点击的主题
+				pulldown:true,//下拉刷新
+				pullup:true//上拉加载
 			}
 		},
 		methods:{
@@ -126,6 +136,11 @@
 			//当前点击的主题
 			handleToTheme(id){
 				this.themeId=id;
+			},
+			//scroll事件
+			moreData(){
+				this.dailyTime-=86400000;
+				this.getRecommendList();
 			}
 		},
 		mounted (){

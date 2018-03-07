@@ -11,4 +11,5 @@
 - [Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 - [Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
 - [Vue.js实战](https://book.douban.com/subject/27178802/)
+- [当 better-scroll 遇见 Vue](https://zhuanlan.zhihu.com/p/27407024)
 
