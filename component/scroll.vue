@@ -102,9 +102,7 @@
         // 是否派发滚动到底部事件，用于上拉加载
         if (this.pullup) {
           this.scroll.on('scrollEnd', () => {
-          	console.log(this.scroll.y);
-          	console.log(this.maxScrollY);
-            // 滚动到底部
+                    // 滚动到底部
             if (this.scroll.y <= (this.scroll.maxScrollY + 50)) {
               this.$emit('scrollToEnd')
             }

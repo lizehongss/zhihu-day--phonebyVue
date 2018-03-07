@@ -2,6 +2,7 @@
 - 图标库使用 [Iconfont-阿里巴巴矢量图标库](http://www.iconfont.cn/)
 - 移动布局采用flex布局
 - 使用自定义指令 **Chickoutside** 完成侧栏显示和隐藏
+- 使用[better-scroll](https://github.com/ustbhuangyi/better-scroll)实现上拉加载和下拉刷新
 
 # 基本功能
 - [x] 首页导航 -- 完成

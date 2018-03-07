@@ -3,11 +3,9 @@ export default {
 		function documentHandle (e) {
 			//判断是否在元素内部
 			if(el.contains(e.target)){
-				console.log("fail");
 				return false;
 			}
 			if(binding.expression){
-				console.log("ok");
 				binding.value(e);
 			}
 		}

@@ -11,7 +11,7 @@
 				</div>
 				<div class="daily-comment-content">
 					<div class="daily-comment-name">{{comment.author}}</div>
-					<div class="daily-comment-time" v-time="comment.time"></div>
+					<div class="daily-comment-time" v-Time="comment.time"></div>
 					<div class="daily-comment-text">{{comment.content}}</div>
 				</div>
 			</div>
@@ -19,7 +19,7 @@
 	</div>
 </template>
 <script>
-	import Time from '../diectives/time';
+	import Time from '../directives/time';
 	import $ from '../libs/util';
 	export default{
 		directives:{
