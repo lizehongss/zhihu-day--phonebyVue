@@ -77,6 +77,7 @@
 	};
 </script>
 <style>
+
 	.header{
 		background-size: 100%;
 		display: flex;
