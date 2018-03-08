@@ -25,3 +25,7 @@ import dailyArticle from '../component/daily-article.vue'
 		}
 	}
 </script>
+<style>
+/*引入zhihu body 的css样式*/
+	@import 'http:\/\/news-at.zhihu.com\/css\/news_qa.auto.css?v=4b3e3'
+</style>

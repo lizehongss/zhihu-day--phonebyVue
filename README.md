@@ -4,6 +4,8 @@
 - 使用自定义指令 **Chickoutside** 完成侧栏显示和隐藏
 - 使用[better-scroll](https://github.com/ustbhuangyi/better-scroll)实现上拉加载和下拉刷新
 
+# API
+-[](https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90)
 # 基本功能
 - [x] 首页导航 -- 完成
 - [x] 首页侧栏 -- 完成

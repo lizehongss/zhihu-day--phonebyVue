@@ -1,9 +1,13 @@
 <template>
 	<div class="daily-article">
+		<div class="header" :style="styles">
 		<div class="daily-article-title">{{data.title}}</div>
+		<div class="bq">{{data.image_source}}</div>
+
+	</div>
 		<div class="daily-article-content" v-html="data.body"></div>
 
-		<div class="daily-comments" v-show="comments.length">
+		<!-- <div class="daily-comments" v-show="comments.length">
 			<span>评论({{comments.length}})</span>
 			<div class="daily-comment" v-for="comment in comments">
 				<div class="daily-comment-avator">
@@ -15,7 +19,7 @@
 					<div class="daily-comment-text">{{comment.content}}</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </template>
 <script>
@@ -34,7 +38,8 @@
 		data(){
 			return {
 				data: {},
-				comments:[]
+				comments:[],
+				imgPath: $.imgPath,
 			}
 		},
 		methods:{
@@ -61,6 +66,35 @@
 			id(val){
 				if(val) this.getArticle();
 			}
+		},
+		computed:{
+			styles(){
+				return {
+					backgroundImage: 'url('+this.imgPath+this.data.image+')',
+				};
+			}
 		}
 	};
 </script>
+<style>
+	.header{
+		background-size: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content:flex-end;
+		align-items: center;
+		height: 200px;
+	}
+	.daily-article-title{
+		width:75%;
+		color: #ffe;
+	}
+	.bq{
+		align-self: flex-end;
+		font-size: 1em;
+		color: #fee;
+	}
+	.img-place-holder{
+		display: none;
+	}
+</style>
