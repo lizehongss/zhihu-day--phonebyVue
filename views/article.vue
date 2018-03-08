@@ -59,7 +59,7 @@ import $ from '../libs/util';
         console.log(this.comments);
       },
       handleRouter(){
-        this.$router.push('/index');
+        this.$router.go(-1);
       }
     },
 

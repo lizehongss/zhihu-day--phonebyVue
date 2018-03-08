@@ -1,5 +1,5 @@
 <template>
-	 <div class="sidebar" v-show="showsilbar">
+	 <div class="sidebar" v-show="showsilbars">
 	 	<div class="admin">
 	 		<div class="top">
 	 		<svg class="icon" aria-hidden="true">
@@ -18,7 +18,7 @@
 			<span>离线下载</span>
 		</div>
 	 	</div>
-	 	<div class="return_deality">
+	 	<div class="return_deality" @click.stop="returnIndex">
 	 		<svg class="icon" aria-hidden="true">
 				<use xlink:href="#icon-remind"></use>
 			</svg>
@@ -48,7 +48,8 @@
 		data(){
 			return{
 				themes:[],
-				themeId: 0
+				themeId: 0,
+				showsilbars:this.showsilbar
 			}
 		},
 		methods:{
@@ -60,10 +61,20 @@
 			handleToTheme(id){
 				this.themeId=id;
 				this.$router.push('/theme/'+id+'');
+				this.showsilbars=false;
+			},
+			returnIndex(){
+				this.$router.push('/index');
+				this.showsilbars=false;
 			}
 		},
 		mounted(){
 			this.getThemes();
+		},
+		watch:{
+			showsilbar:function(val){
+				this.showsilbars=val;
+			}
 		}
 	}
 </script>
@@ -108,6 +119,10 @@
 	}
 	.return_deality{
 		margin-top:20px;
+	}
+	.icon{
+		margin-left: 1em;
+		margin-right: 1em;
 	}
 	
 </style>
