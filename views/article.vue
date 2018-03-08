@@ -5,7 +5,7 @@
   <div class="nav-f">
     <div class="nav">
     <div class="left">
-    <svg class="icon" aria-hidden="true">
+    <svg class="icon" aria-hidden="true" @click.stop="handleRouter">
         <use xlink:href="#icon-back"></use>
       </svg>
     </div>
@@ -57,8 +57,12 @@ import $ from '../libs/util';
           this.popularity=res.popularity;
             })
         console.log(this.comments);
+      },
+      handleRouter(){
+        this.$router.push('/index');
       }
     },
+
 	}
 </script>
 <style scoped>

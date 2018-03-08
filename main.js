@@ -14,18 +14,18 @@ const Routers =[
 	component: (resolve) => require(['./views/index.vue'],resolve)
 },
 {
-	path: '/about',
+	path: '/theme/:id',
 	meta:{
-		title: '关于'
+		title: '主题页'
 	},
-	component:(resolve) => require(['./views/about.vue'],resolve)
+	component:(resolve) => require(['./views/theme.vue'],resolve)
 },
 {
 	path: '/user/:id',
 	meta:{
-		title: '个人主页'
+		title: '文章页'
 	},
-	component: (resolve) =>require(['./views/user.vue'],resolve)
+	component: (resolve) =>require(['./views/article.vue'],resolve)
 },
 {
 	path: '*',
