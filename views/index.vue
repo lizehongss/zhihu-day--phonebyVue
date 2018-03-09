@@ -129,9 +129,7 @@
 		align-items: center;
 		color: #fff;
 	}
-	.daily-day{
-
-	}
+	
 	.daily{
 		margin-top:40px;
 	}

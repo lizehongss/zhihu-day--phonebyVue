@@ -67,7 +67,11 @@ import $ from '../libs/util';
 </script>
 <style scoped>
 /*引入zhihu body 的css样式*/
-	@import 'http:\/\/news-at.zhihu.com\/css\/news_qa.auto.css?v=4b3e3'
+	/*@import 'http:\/\/news-at.zhihu.com\/css\/news_qa.auto.css?v=4b3e3'
+	.img-place-holder{
+		display: none;
+	}*/
+	@import '../zhihu.css'
   .nav-f{
     position: fixed;
     top: 0;

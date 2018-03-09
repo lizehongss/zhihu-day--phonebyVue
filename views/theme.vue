@@ -17,6 +17,12 @@
 		<div class="list-title">{{themeList.description}}</div>
 		<div class="bq">{{themeList.image_source}}</div>
 	</div>
+	<div class="author">
+		<span>主编:</span>	
+			<img   :src="imgPath+ed.avatar"
+			v-for="ed in themeList.editors"
+			@click="gotoinfo(rote)">
+	</div>
 	<Item v-for="item in themeList.stories"
 			:data="item"
 			:key="item.id"
@@ -42,11 +48,12 @@ import Clickoutside from '../directives/clickoutside';
 				themeList:[],
 				showsilbar: false,
 				themeId: 0,
-				imgPath: $.imgPath
+				imgPath: $.imgPath,
+				rote:this.$route.params.id
 			}
 		},
 		mounted(){
-			const Num=parseInt(this.$route.params.id);
+			var Num=parseInt(this.$route.params.id);
 		
 			this.getThemesList(Num);
 		},
@@ -63,11 +70,16 @@ import Clickoutside from '../directives/clickoutside';
 			handleRouter(id){
 				if(this.showsilbar) return;
 				this.$router.push('/user/'+id+'');
+			},
+			gotoinfo(id){
+				console.log(id);
+				this.$router.push('/editor/'+id+'');
 			}
 		},
 		watch:{
 			$route(){
 				this.themeList=[];
+				this.rote=this.$route.params.id
 				var id=parseInt(this.$route.params.id);
 				this.getThemesList(id);
 			}
@@ -110,13 +122,31 @@ import Clickoutside from '../directives/clickoutside';
 		flex-direction: column;
 		justify-content:flex-end;
 		align-items: center;
+		height: 200px;
 		}
 	.list-title{
-		color: #ffe;
+		color: #5a4747;
 	}
 	.bq{
 		align-self: flex-end;
 		font-size: 1em;
 		color: #fee;
 	}
+	.author{
+		/*display: flex;
+		flex-direction: flex-start;
+		align-items: center;
+		margin-top: 1em;
+		margin-bottom: 1em;*/
+		
+	}
+	.author img{
+		display: inline-block;
+		border-radius: 50%;
+		margin: 0 auto;
+		width: 30px;
+		height: 30px;
+		padding-right: 4px;
+	}
+
 </style>

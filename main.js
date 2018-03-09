@@ -30,6 +30,10 @@ const Routers =[
 {
 	path: '*',
 	redirect:'/index'
+},
+{
+	path:'/editor/:id',
+	component: (resolve)=>require(['./views/editor.vue'],resolve)
 }]
 const RouterConfig={
 	mode:'history',

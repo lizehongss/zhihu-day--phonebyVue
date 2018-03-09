@@ -76,7 +76,7 @@
 		}
 	};
 </script>
-<style>
+<style scoped>
 
 	.header{
 		background-size: 100%;
@@ -95,7 +95,6 @@
 		font-size: 1em;
 		color: #fee;
 	}
-	.img-place-holder{
-		display: none;
-	}
+	
+
 </style>
