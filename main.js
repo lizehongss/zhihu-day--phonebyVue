@@ -34,6 +34,11 @@ const Routers =[
 {
 	path:'/editor/:id',
 	component: (resolve)=>require(['./views/editor.vue'],resolve)
+},
+{
+	path: '/commont/:id',
+	component: (resolve)=>require(['./views/commont.vue'],resolve)
+
 }]
 const RouterConfig={
 	mode:'history',

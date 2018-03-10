@@ -5,7 +5,7 @@
   <div class="nav-f">
     <div class="nav">
     <div class="left">
-    <svg class="icon" aria-hidden="true" @click.stop="handleRouter">
+    <svg class="icon" aria-hidden="true" @click.self="handleRouter">
         <use xlink:href="#icon-back"></use>
       </svg>
     </div>
@@ -16,7 +16,7 @@
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-favorite"></use>
       </svg>
-      <svg class="icon" aria-hidden="true">
+      <svg class="icon" aria-hidden="true" @click.self="handlecom">
         <use xlink:href="#icon-code"></use>
       </svg>
       <span>{{comments}}</span>
@@ -60,6 +60,10 @@ import $ from '../libs/util';
       },
       handleRouter(){
         this.$router.go(-1);
+      },
+      handlecom(){
+        console.log("ok");
+        this.$router.push('/commont/'+this.articleId+'');
       }
     },
 
