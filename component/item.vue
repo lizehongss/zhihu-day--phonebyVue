@@ -39,6 +39,7 @@
 	}
 	.daily-img{
 		margin-right:1em;
+		margin-left: 0.5em;
 		
 	}
 	.daily-img img{
